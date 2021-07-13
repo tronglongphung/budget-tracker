@@ -16,7 +16,7 @@ const saveRecord = (data) => {
 
 if (navigator.onLine) {
   db.pendingTransaction.toArray().then((data) => {
-    console.log(`Adding data online, ${data}`);
+    console.log(data);
     fetch("/api/transaction/bulk", {
       method: "POST",
       body: JSON.stringify(data),
