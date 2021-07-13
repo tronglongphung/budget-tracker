@@ -51,7 +51,7 @@
   
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
   <script src="index.js"></script>
-  <script>
+  <!-- <script>
     const db = new Dexie("transaction_database");
           db.version(1).transactions({
               transaction: 'name,value'
@@ -62,7 +62,7 @@
     const saveRecord = (data) => { 
       db.transaction.put({name: data.name, value: data.value
       }).then (function(){
-          //
+          console.log(db);
           return db.transaction.get(data.name, data.value);
       }).catch(function(error) {
           
@@ -74,6 +74,6 @@
       
     }
       
-  </script>
+  </script> -->
 </body>
 </html>
