@@ -1,4 +1,4 @@
 node_modules
 public/sw.js
-workbox*.js
+public/workbox*.js
 *.map
