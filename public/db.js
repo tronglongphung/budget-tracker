@@ -5,7 +5,7 @@ db.version(1).stores({
 
 const saveRecord = (data) => {
   db.pendingTransaction
-    .put({ name: data.name, value: data.value, date: new Date().toISOString })
+    .put({ name: data.name, value: data.value })
     .then(function () {
       console.log("Successfully saved", db);
     })
@@ -16,7 +16,7 @@ const saveRecord = (data) => {
 
 if (navigator.onLine) {
   db.pendingTransaction.toArray().then((data) => {
-    console.log(data);
+    console.log(`Adding data online, ${data}`);
     fetch("/api/transaction/bulk", {
       method: "POST",
       body: JSON.stringify(data),
