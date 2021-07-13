@@ -5,7 +5,7 @@ db.version(1).stores({
 
 const saveRecord = (data) => {
   db.pendingTransaction
-    .put({ name: data.name, value: data.value })
+    .put({ name: data.name, value: data.value, date: new Date().toISOString })
     .then(function () {
       console.log("Successfully saved", db);
     })
