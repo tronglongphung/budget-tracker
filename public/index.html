@@ -8,6 +8,8 @@
   <link rel="shortcut icon" href="icons/icon-192x192.png" type="image/x-icon">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/dexie@latest/dist/dexie.js"></script>
+
   <script>
     // Check that service workers are supported
     if ('serviceWorker' in navigator) {
@@ -18,30 +20,6 @@
     }
     </script>
 
-<script src="https://unpkg.com/dexie@latest/dist/dexie.js"></script>
-<script>
-  const db = new Dexie("transaction_database");
-        db.version(1).transactions({
-            transaction: 'name,value'
-        });
-  
-
-  const saveRecord = (data) => { 
-    db.transaction.put({name: data.name, value: data.value
-    }).then (function(){
-        console.log(db);
-        return db.transaction.get(data.name, data.value);
-    }).catch(function(error) {
-        
-        alert ("Ooops: " + error);
-    });
-  }
-      
-  if (navigator.onLine){
-    
-  }
-    
-</script>
   <title>Budget Tracker</title>
 </head>
 <body>
@@ -72,9 +50,9 @@
     
     <canvas id="myChart"></canvas>
   </div>
-  
+
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
   <script src="index.js"></script>
-  
+  <script src="db.js"></script>
 </body>
 </html>
