@@ -16,7 +16,7 @@ app.use(express.json());
 app.use(express.static("public"));
 
 mongoose.connect(
-  "mongodb+srv://tronglongphung:Hungonly030@cluster0.7irz3.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+  "mongodb+srv://tronglongphung:Hungonly030@cluster0.7irz3.mongodb.net/budget-tracker?retryWrites=true&w=majority",
   {
     useNewUrlParser: true,
     useFindAndModify: false,
